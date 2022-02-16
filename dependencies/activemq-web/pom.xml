@@ -85,6 +85,10 @@
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jsp-2.1</artifactId>
         </exclusion>
+        <exclusion>
+          <groupId>rome</groupId>
+          <artifactId>rome</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -93,6 +97,16 @@
       <version>${project.version}</version>
       <type>pom</type>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.rometools</groupId>
+      <artifactId>rome</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>jdom</groupId>
+          <artifactId>jdom</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.opennms.dependencies</groupId>

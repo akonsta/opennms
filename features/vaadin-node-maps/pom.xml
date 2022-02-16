@@ -13,8 +13,8 @@
 	<packaging>bundle</packaging>
 	<name>OpenNMS :: Features :: Node Maps</name>
 	<description>
-    OpenNMS Vaadin UI for displaying nodes on geographical maps using assets records.
-  </description>
+		OpenNMS Vaadin UI for displaying nodes on geographical maps using assets records.
+	</description>
 	<properties>
 		<bundle.symbolicName>org.opennms.features.vaadin-node-maps</bundle.symbolicName>
 		<bundle.namespace>org.opennms.features.vaadin.nodemaps</bundle.namespace>
@@ -51,50 +51,50 @@
 				</configuration>
 			</plugin>
 
-            <plugin>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.plugin.version}</version>
-                <configuration>
-                    <extraJvmArgs>-XX:MaxMetaspaceSize=256m -Xmx${vaadinJavaMaxMemory} -Xss1024k</extraJvmArgs>
-                    <webappDirectory>${basedir}/target/gwt/VAADIN/widgetsets</webappDirectory>
-                    <hostedWebapp>${basedir}/target/gwt/VAADIN/widgetsets</hostedWebapp>
-                    <noServer>true</noServer>
-                    <draftCompile>false</draftCompile>
-                    <compileReport>false</compileReport>
-                    <style>OBF</style>
-                    <strict>true</strict>
-                    <runTarget>http://localhost:8980/opennms/node-maps</runTarget>
-                    <gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
-                    <localWorkers>${vaadinLocalWorkers}</localWorkers>
-                </configuration>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <!-- if you don't specify any modules, the plugin will find them -->
-                            <!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module>
-                                </modules> -->
-                        </configuration>
-                        <goals>
-                            <goal>resources</goal>
-                            <goal>update-widgetset</goal>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-dev</artifactId>
-                        <version>${gwtVersion}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-user</artifactId>
-                        <version>${gwtVersion}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+			<plugin>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-maven-plugin</artifactId>
+				<version>${vaadin.plugin.version}</version>
+				<configuration>
+					<extraJvmArgs>-XX:MaxMetaspaceSize=256m -Xmx${vaadinJavaMaxMemory} -Xss1024k</extraJvmArgs>
+					<webappDirectory>${basedir}/target/gwt/VAADIN/widgetsets</webappDirectory>
+					<hostedWebapp>${basedir}/target/gwt/VAADIN/widgetsets</hostedWebapp>
+					<noServer>true</noServer>
+					<draftCompile>false</draftCompile>
+					<compileReport>false</compileReport>
+					<style>OBF</style>
+					<strict>true</strict>
+					<runTarget>http://localhost:8980/opennms/node-maps</runTarget>
+					<gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
+					<localWorkers>${vaadinLocalWorkers}</localWorkers>
+				</configuration>
+				<executions>
+					<execution>
+						<configuration>
+							<!-- if you don't specify any modules, the plugin will find them -->
+							<!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module>
+							</modules> -->
+						</configuration>
+						<goals>
+							<goal>resources</goal>
+							<goal>update-widgetset</goal>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-dev</artifactId>
+						<version>${gwtVersion}</version>
+					</dependency>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>${gwtVersion}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 
 	</build>
@@ -197,7 +197,7 @@
 		<dependency>
 			<groupId>org.opennms.core</groupId>
 			<artifactId>org.opennms.core.sysprops</artifactId>
-            <version>${project.version}</version>
+						<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -247,23 +247,27 @@
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-easymock</artifactId>
 			<scope>test</scope>
-		</dependency>  
+		</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-mockito2</artifactId>
 			<scope>test</scope>
-		</dependency>  
-		<dependency>
-		    <groupId>commons-beanutils</groupId>
-		    <artifactId>commons-beanutils</artifactId>
-		    <scope>test</scope>
 		</dependency>
 		<dependency>
-		    <groupId>com.googlecode.gwt-test-utils</groupId>
-		    <artifactId>gwt-test-utils</artifactId>
-		    <version>0.47</version>
-		    <scope>test</scope>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.gwt-test-utils</groupId>
+			<artifactId>gwt-test-utils</artifactId>
+			<version>0.47</version>
+			<scope>test</scope>
 			<exclusions>
+				<exclusion>
+					<groupId>ant</groupId>
+					<artifactId>ant</artifactId>
+				</exclusion>
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
@@ -274,12 +278,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
 			<version>${gwtVersion}</version>
 			<scope>test</scope>
-        </dependency>
-    </dependencies>
-
+		</dependency>
+	</dependencies>
 </project>
