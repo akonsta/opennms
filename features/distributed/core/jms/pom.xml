@@ -36,6 +36,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.opennms.dependencies</groupId>
+            <artifactId>camel-jms-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
             <groupId>org.opennms.features.scv</groupId>
             <artifactId>org.opennms.features.scv.api</artifactId>
             <version>${project.version}</version>
@@ -55,6 +60,11 @@
             <artifactId>activemq-camel</artifactId>
             <version>${activemqVersion}</version>
             <exclusions>
+                <exclusion>
+                    <!-- we'll get this from camel-jms-dependencies -->
+                    <groupId>org.apache.camel</groupId>
+                    <artifactId>camel-core</artifactId>
+                </exclusion>
                 <exclusion>
                     <groupId>javax.xml.bind</groupId>
                     <artifactId>jaxb-api</artifactId>
