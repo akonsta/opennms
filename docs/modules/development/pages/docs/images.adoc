@@ -12,7 +12,7 @@ Include screenshots only to illustrate a concept that may be difficult to unders
 Each major component in the documentation (development, deployment, operation) has two folders: `/images` (for graphics) and `/pages` (for text).
 
 The images folder structure mirrors the text structure. 
-For example, `/pages/metadata` amd `/images/metatdata`. 
+For example, `/pages/metadata` and `/images/metatdata`. 
 This makes is easier to organize and find images associated with an AsciiDoc text file. 
 
 .Example folder structure for image files
