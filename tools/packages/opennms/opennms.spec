@@ -899,6 +899,7 @@ if [ -n "$DEBUG" ]; then
 fi
 
 "$ROOT_INST/bin/fix-permissions" -R "$ROOT_INST" "$SHARE_INST" "$LOG_INST"
+"$ROOT_INST/bin/fix-permissions" -f "$LOG_INST"
 
 if [ "$ROOT_INST/logs" != "$LOG_INST" ]; then
 	printf -- "- making symlink for $ROOT_INST/logs... "
